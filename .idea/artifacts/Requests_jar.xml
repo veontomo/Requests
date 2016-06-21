@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Requests:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Requests_jar</output-path>
+    <root id="archive" name="Requests.jar">
+      <element id="module-output" name="Requests" />
+    </root>
+  </artifact>
+</component>
