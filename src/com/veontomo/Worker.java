@@ -4,6 +4,11 @@ package com.veontomo;
 /**
  * Created by Andrey on 21/06/2016.
  */
+
+/**
+ * Demonstration of some concurrency-specific troubles.
+ * http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
+ */
 public class Worker {
 
     private final int iterations;
