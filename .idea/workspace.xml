@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbb15dac-aecc-4895-aaac-90091e6dc1a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/veontomo/Counter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/veontomo/Counterable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/veontomo/Counterable.java" afterPath="$PROJECT_DIR$/src/com/veontomo/Counterable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/veontomo/Main.java" afterPath="$PROJECT_DIR$/src/com/veontomo/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/veontomo/Worker.java" afterPath="$PROJECT_DIR$/src/com/veontomo/Worker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java" afterPath="$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java" />
     </list>
     <ignored path="Requests.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,14 +27,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SiteVisitor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java">
+      <file leaf-file-name="Counterable.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/veontomo/Counterable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,10 +61,10 @@
         <option value="$PROJECT_DIR$/src/com/veontomo/Worker.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/veontomo/Enqueued.java" />
-        <option value="$PROJECT_DIR$/src/com/veontomo/Counterable.java" />
-        <option value="$PROJECT_DIR$/src/com/veontomo/Counter.java" />
         <option value="$PROJECT_DIR$/src/com/veontomo/Main.java" />
         <option value="$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java" />
+        <option value="$PROJECT_DIR$/src/com/veontomo/Counterable.java" />
+        <option value="$PROJECT_DIR$/src/com/veontomo/Counter.java" />
       </list>
     </option>
   </component>
@@ -481,7 +476,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466593032854" expanded="true" signature="115:298" ph="{...}" />
+            <marker date="1466599127717" expanded="true" signature="115:296" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -520,7 +515,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <marker date="1466593032854" expanded="true" signature="115:298" ph="{...}" />
+            <marker date="1466599127717" expanded="true" signature="115:296" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -727,50 +722,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/veontomo/Counterable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1466592005129" expanded="true" signature="23:66" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/veontomo/Counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding>
-            <marker date="1466592323607" expanded="true" signature="30:112" ph="..." />
-            <marker date="1466592323607" expanded="true" signature="114:326" ph="/**...*/" />
-            <marker date="1466592323607" expanded="true" signature="354:451" ph="/**...*/" />
-            <marker date="1466592323607" expanded="true" signature="488:571" ph="/**...*/" />
-            <marker date="1466592323607" expanded="true" signature="689:827" ph="{...}" />
-            <marker date="1466592323607" expanded="true" signature="871:934" ph="{...}" />
-            <marker date="1466592323607" expanded="true" signature="988:1120" ph="{...}" />
-            <marker date="1466592323607" expanded="true" signature="1147:1238" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/veontomo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="153">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding>
-            <marker date="1466593032854" expanded="true" signature="115:298" ph="{...}" />
+            <marker date="1466599127717" expanded="true" signature="115:296" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/veontomo/SiteVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="329">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1466599271175" expanded="true" signature="30:169" ph="..." />
+            <marker date="1466599271175" expanded="true" signature="171:214" ph="/**...*/" />
+            <marker date="1466599271175" expanded="true" signature="434:495" ph="{...}" />
+            <marker date="1466599271175" expanded="false" signature="534:545" ph=" { " />
+            <marker date="1466599271175" expanded="false" signature="566:572" ph=" }" />
+            <marker date="1466599271175" expanded="true" signature="642:1708" ph="{...}" />
+            <marker date="1466599271175" expanded="true" signature="739:1633" ph="//..." />
+            <marker date="1466599271175" expanded="false" signature="1762:1773" ph=" { " />
+            <marker date="1466599271175" expanded="false" signature="1787:1793" ph=" }" />
+            <marker date="1466599271175" expanded="false" signature="1835:1846" ph=" { " />
+            <marker date="1466599271175" expanded="false" signature="1858:1864" ph=" }" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/veontomo/Counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding>
+            <marker date="1466599363171" expanded="true" signature="30:112" ph="..." />
+            <marker date="1466599363171" expanded="true" signature="114:326" ph="/**...*/" />
+            <marker date="1466599363171" expanded="true" signature="354:451" ph="/**...*/" />
+            <marker date="1466599363171" expanded="true" signature="488:571" ph="/**...*/" />
+            <marker date="1466599363171" expanded="true" signature="689:827" ph="{...}" />
+            <marker date="1466599363171" expanded="true" signature="871:934" ph="{...}" />
+            <marker date="1466599363171" expanded="true" signature="988:1120" ph="{...}" />
+            <marker date="1466599363171" expanded="true" signature="1147:1238" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/veontomo/Counterable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
