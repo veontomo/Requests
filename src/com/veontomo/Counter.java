@@ -30,7 +30,6 @@ public class Counter {
     public void enqueue(Counterable elem) {
         elem.bind(this);
         this.queue.add(elem);
-
     }
 
     public void start() throws InterruptedException {
@@ -38,13 +37,10 @@ public class Counter {
             semaphore.acquire();
             (new Thread(elem)).start();
         }
-
     }
 
 
-
     public void free() {
-        System.out.println("Releasing the permit...");
         semaphore.release();
     }
 }

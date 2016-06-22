@@ -1,49 +1,37 @@
 package com.veontomo;
 
+import java.util.ArrayList;
 
 /**
- * Created by Andrey on 21/06/2016.
+ * Created by Andrey on 22/06/2016.
  */
+public class Worker extends Counterable {
+    private static int instanceCounter = 0;
+    private final int marker;
+    private Counter host;
+    private final ArrayList<Action> actions;
 
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-/**
- * Demonstration of some concurrency-specific troubles.
- * http://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
- */
-public class Worker {
-
-    private final int threadNum;
-
-    private int accum = 0;
-
-    public Worker(int iterations) {
-        this.threadNum = iterations;
-    }
-
-    public int getAccum() {
-        return accum;
+    public Worker(final ArrayList<Action> actions) {
+        this.actions = actions;
+        instanceCounter++;
+        this.marker = instanceCounter;
     }
 
 
-    synchronized private void increment() {
-        this.accum++;
+    @Override
+    public void onStart() {
+        System.out.println("worker " + marker + " has started.");
+        actions.forEach(x -> x.execute());
+
     }
 
-    public void run() throws InterruptedException {
+    public void bind(Counter c) {
+        this.host = c;
+    }
 
-        Thread[] threads = new Thread[threadNum];
-        for (int counter = 0; counter < threadNum; counter++) {
-            threads[counter] = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    increment();
-                }
-            });
-            threads[counter].start();
-//            threads[counter].join();
-        }
-
+    @Override
+    public void onFinish() {
+        System.out.println("worker " + marker + " has finished.");
+        host.free();
     }
 }
