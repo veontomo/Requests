@@ -1,10 +1,9 @@
 package com.veontomo;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Random;
 
 /**
@@ -23,30 +22,32 @@ public class UrlRequest implements Action {
 
     @Override
     public void execute() {
+        // See
+        // http://www.journaldev.com/7148/java-httpurlconnection-example-java-http-request-get-post
+        // for details
         System.out.println("url request action");
-
-        URLConnection connection;
-        InputStream response;
-        String header;
+        HttpURLConnection connection;
         Random generator = new Random();
         final int userAgentSize = userAgents.length;
         final int encodingSize = encodings.length;
-        for (int i = 0; i < 1; i++) {
-            try {
-                connection = new URL(url).openConnection();
-                connection.setRequestProperty("Accept-Charset", encodings[generator.nextInt(encodingSize)]);
-                connection.addRequestProperty("User-Agent", userAgents[generator.nextInt(userAgentSize)] );
-                response = connection.getInputStream();
-                if (connection == null) {
-                    System.out.println("no responce!");
-                }
-            } catch (MalformedURLException ex) {
-                System.out.println("url " + url + " is not a valid one.");
-            } catch (IOException ex) {
-                System.out.println("can not connect to " + url);
-                ex.printStackTrace();
-            }
+        int responseCode;
+        try {
+            connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept-Charset", encodings[generator.nextInt(encodingSize)]);
+            connection.addRequestProperty("User-Agent", userAgents[generator.nextInt(userAgentSize)]);
+            connection.getResponseCode();
+            responseCode = connection.getResponseCode();
 
+            if (responseCode != HttpURLConnection.HTTP_OK) {
+                System.out.println("unexpected response code: " + responseCode + " when getting an url " + url);
+            }
+        } catch (MalformedURLException ex) {
+            System.out.println("url " + url + " is not a valid one.");
+        } catch (IOException ex) {
+            System.out.println("can not connect to " + url);
+            ex.printStackTrace();
         }
+
     }
 }
