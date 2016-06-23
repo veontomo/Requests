@@ -1,9 +1,7 @@
 package com.veontomo;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 import java.util.Random;
 
 /**
@@ -25,7 +23,7 @@ public class UrlRequest implements Action {
         // See
         // http://www.journaldev.com/7148/java-httpurlconnection-example-java-http-request-get-post
         // for details
-        System.out.println("url request action");
+//        System.out.println("request url:" + url);
         HttpURLConnection connection;
         Random generator = new Random();
         final int userAgentSize = userAgents.length;
@@ -43,11 +41,14 @@ public class UrlRequest implements Action {
                 System.out.println("unexpected response code: " + responseCode + " when getting an url " + url);
             }
         } catch (MalformedURLException ex) {
-            System.out.println("url " + url + " is not a valid one.");
+            System.out.println("error for url " + url + ": " + ex.getMessage());
+        } catch (ConnectException ex) {
+            System.out.println("connecting to " + url + ": " + ex.getMessage());
+        } catch (SocketException ex) {
+            System.out.println("can not connect to " + url + ": " + ex.getMessage());
         } catch (IOException ex) {
-            System.out.println("can not connect to " + url);
+            System.out.println("can not connect to " + url + ": " + ex.getMessage());
             ex.printStackTrace();
         }
-
     }
 }
