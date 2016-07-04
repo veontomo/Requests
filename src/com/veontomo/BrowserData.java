@@ -1,9 +1,9 @@
 package com.veontomo;
 
 /**
- * Created by Andrey on 22/06/2016.
+ * Browser data similator.
  */
-public abstract class BrowserData {
+abstract class BrowserData {
     /**
      * list of some possible user agents
      * http://www.useragentstring.com/pages/useragentstring.php

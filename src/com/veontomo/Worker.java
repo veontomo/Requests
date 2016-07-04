@@ -3,12 +3,11 @@ package com.veontomo;
 import java.util.ArrayList;
 
 /**
- * Created by Andrey on 22/06/2016.
+ * A worker that performs actions consequently.
  */
 public class Worker extends Counterable {
     private static int instanceCounter = 0;
     private final int marker;
-    private Counter host;
     private final ArrayList<Action> actions;
 
     public Worker(final ArrayList<Action> actions) {
@@ -18,20 +17,17 @@ public class Worker extends Counterable {
     }
 
 
-    @Override
-    public void onStart() {
-        System.out.println("worker " + marker + " has started.");
-        actions.forEach(x -> x.execute());
 
-    }
+    public Summary call() {
+        final Summary summary = new DetailedSummary();
+        final long time = System.currentTimeMillis();
+        System.out.println("worker " + marker + " has started");
+        for (Action action : actions) {
+            summary.merge(action.execute());
+        }
+        System.out.println("worker " + marker + " has finished in " + (System.currentTimeMillis()-time) + " ms.");
+        return summary;
 
-    public void bind(Counter c) {
-        this.host = c;
-    }
-
-    @Override
-    public void onFinish() {
-        System.out.println("worker " + marker + " has finished.");
-        host.free();
     }
 }
+

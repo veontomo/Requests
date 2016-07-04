@@ -1,9 +1,7 @@
 package com.veontomo;
 
 import java.util.ArrayList;
-import java.util.Random;
-
-public class Main {
+class Main {
 
     public static void main(String[] args) throws InterruptedException {
         final String[] clickPool = new String[]{
@@ -13,16 +11,15 @@ public class Main {
                 "http://192.168.5.95/news/rappresentanti/start?annuncio=00000001819",
                 "http://192.168.5.95/news/images/venditori/TRACK-QUERY/logo_natale_2015.jpg"
         };
-        final String[] viewPool = new String[]{
-                "http://192.168.5.95/news/images/venditori/logo_natale_2015.jpg",
-        };
+//        final String[] viewPool = new String[]{
+//                "http://192.168.5.95/news/images/venditori/logo_natale_2015.jpg",
+//        };
 
         final int size = clickPool.length;
-        final int ACTIONS_PER_WORKER = 1;
+        final int ACTIONS_PER_WORKER = 5;
         final int WORKER_NUM = 1000;
-        final int SLOT_NUM = 200;
+        final int SLOT_NUM = 20;
         int actionsHttp = 0;
-        int actionsHalt = 0;
         ArrayList<Action> actions;
 
         Counter c = new Counter(SLOT_NUM);
@@ -31,16 +28,13 @@ public class Main {
             for (int j = 0; j < ACTIONS_PER_WORKER; j++) {
                 actions.add(new UrlRequest(clickPool[actionsHttp % size]));
                 actionsHttp++;
-//                actions.add(new Halt(200));
-//                actionsHalt++;
 
             }
             Worker v = new Worker(actions);
             c.enqueue(v);
         }
-        System.out.println("Number of halt actions: " + actionsHalt);
-        System.out.println("Number of http actions: " + actionsHttp);
-        System.out.println("Total number of actions: " + (actionsHalt + actionsHttp));
+        System.out.println("Number of the actions: " + actionsHttp);
+        System.out.println("Starting the game.");
         c.start();
     }
 

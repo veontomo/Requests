@@ -3,6 +3,6 @@ package com.veontomo;
 /**
  * An action to be executed.
  */
-public interface Action {
-    void execute();
+interface Action {
+    Summary execute();
 }
