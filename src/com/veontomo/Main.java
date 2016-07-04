@@ -9,16 +9,18 @@ public class Main {
         final String[] clickPool = new String[]{
                 "http://192.168.5.95/news/venditori/venditori",
                 "http://192.168.5.95/news/venditori/rappresentanti",
+                "http://192.168.5.95/news/no-such-route/no",
                 "http://192.168.5.95/news/rappresentanti/start?annuncio=00000001819",
                 "http://192.168.5.95/news/images/venditori/TRACK-QUERY/logo_natale_2015.jpg"
         };
         final String[] viewPool = new String[]{
                 "http://192.168.5.95/news/images/venditori/logo_natale_2015.jpg",
         };
+
         final int size = clickPool.length;
-        final int ACTIONS_PER_WORKER = 3;
-        final int WORKER_NUM = 5000;
-        final int SLOT_NUM = 500;
+        final int ACTIONS_PER_WORKER = 1;
+        final int WORKER_NUM = 1000;
+        final int SLOT_NUM = 200;
         int actionsHttp = 0;
         int actionsHalt = 0;
         ArrayList<Action> actions;
