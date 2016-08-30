@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 
@@ -17,6 +18,17 @@ class Main {
         }
 
         System.out.println("Hostname is " + args[0]);
+        ServerConfigurator config = new ServerConfigurator(args[0]);
+
+        HashMap<String, String> routes = new HashMap<>();
+        routes.put("venditori/venditori", "http://www.venditori.it");
+        routes.put("venditori/offerta", "http://www.venditori.it/fiera_degli_agenti_di_commercio.php");
+
+        HashMap<String, String> dbSettings = new HashMap<>();
+        dbSettings.put("User_Name", "advlite_dev");
+
+        config.loadRoutes(routes);
+
         final String[] clickPool = new String[]{
                 "/news/venditori/venditori",
                 "/news/venditori/rappresentanti",
@@ -24,9 +36,6 @@ class Main {
                 "/news/rappresentanti/start?annuncio=00000001819",
                 "/news/images/venditori/TRACK-QUERY/logo_natale_2015.jpg"
         };
-//        final String[] viewPool = new String[]{
-//                "http://192.168.5.95/news/images/venditori/logo_natale_2015.jpg",
-//        };
 
 
         final int size = clickPool.length;
@@ -49,9 +58,7 @@ class Main {
 
 
         JSONObject routes = new JSONObject();
-        routes.put("venditori/venditori", "http://www.venditori.it");
-        routes.put("venditori/offerta", "http://www.venditori.it/fiera_degli_agenti_di_commercio.php");
-        String url = "http://192.168.5.95/news/routes/add";
+        String url = "/news/routes/add";
         try {
             HttpURLConnection connection;
             connection = (HttpURLConnection) new URL(url).openConnection();

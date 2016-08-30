@@ -6,6 +6,8 @@ package com.veontomo
  * The class contains methods that change the server settings.
  *
  */
-class ServerConfigurator(val host: String){
-
+class ServerConfigurator(val host: String) {
+    fun loadRoutes(routes: Map<String, String>) {
+        throw Exception("Not implemented")
+    }
 }
