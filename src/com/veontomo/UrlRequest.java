@@ -14,16 +14,14 @@ public class UrlRequest implements Action {
 
     private final String[] encodings = BrowserData.encodings;
 
-    public UrlRequest(String url) {
-        this.url = url;
+    public UrlRequest(String host, String path) {
+        this.url = host + path;
+        System.out.println("Url: " + this.url);
     }
+
 
     @Override
     public Summary execute() {
-        // See
-        // http://www.journaldev.com/7148/java-httpurlconnection-example-java-http-request-get-post
-        // for details
-//        System.out.println("request url:" + url);
         Summary summary = new DetailedSummary();
         HttpURLConnection connection;
         Random generator = new Random();
