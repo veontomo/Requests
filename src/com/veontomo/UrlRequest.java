@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Retrieves data from given url
  */
-public class UrlRequest implements Action {
+class UrlRequest implements Action {
     private final String url;
 
     private final String[] userAgents = BrowserData.userAgents;
@@ -16,7 +16,6 @@ public class UrlRequest implements Action {
 
     public UrlRequest(String host, String path) {
         this.url = host + path;
-        System.out.println("Url: " + this.url);
     }
 
 

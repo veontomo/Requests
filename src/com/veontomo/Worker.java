@@ -5,12 +5,12 @@ import java.util.ArrayList;
 /**
  * A worker that performs actions consequently.
  */
-public class Worker extends Counterable {
+class Worker extends Counterable {
     private static int instanceCounter = 0;
     private final int marker;
     private final ArrayList<Action> actions;
 
-    public Worker(final ArrayList<Action> actions) {
+    Worker(final ArrayList<Action> actions) {
         this.actions = actions;
         instanceCounter++;
         this.marker = instanceCounter;

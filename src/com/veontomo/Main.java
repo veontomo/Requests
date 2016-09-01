@@ -1,10 +1,6 @@
 package com.veontomo;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,7 +17,7 @@ class Main {
         final String serverIP = args[2];
         final String password = args[3];
 
-        System.out.println("Hostname is " + host + ", DB Server ip: " + serverIP + ", password: " + password.replaceAll(".", "*"));
+        System.out.println("Hostname is " + host + ", DB Server ip: " + serverIP + ", password: " + password);
 
         ServerConfigurator config = new ServerConfigurator(args[0]);
 

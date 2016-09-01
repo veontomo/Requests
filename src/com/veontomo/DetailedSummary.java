@@ -8,7 +8,7 @@ import java.util.HashMap;
  * or an exception message) occurred during the action execution, the value - the number of times the
  * event has occurred.
  */
-public class DetailedSummary implements Summary {
+class DetailedSummary implements Summary {
     private final HashMap<String, Integer> core = new HashMap<>();
 
     @Override
