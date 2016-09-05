@@ -1,4 +1,8 @@
-package com.veontomo;
+package com.veontomo.requests;
+
+//import com.veontomo.requests.ServerConfigurator;
+
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,16 +25,20 @@ class Main {
 
         ServerConfigurator config = new ServerConfigurator(args[0]);
 
-        HashMap<String, String> routes = new HashMap<>();
+        JSONObject routes = new JSONObject();
         routes.put("venditori/venditori", "http://www.venditori.it");
         routes.put("venditori/offerta", "http://www.venditori.it/fiera_degli_agenti_di_commercio.php");
 
-        HashMap<String, String> dbSettings = new HashMap<>();
+        JSONObject dbSettings = new JSONObject();
         dbSettings.put("User_Name", "advlite_dev");
         dbSettings.put("Database", "advlite_dev");
         dbSettings.put("DriverID", "MySQL");
         dbSettings.put("Password", password);
         dbSettings.put("Server", serverIP);
+
+        JSONObject storageSettings = new JSONObject();
+        storageSettings.put("connection", storageSettings);
+        storageSettings.put("max cache size", 15);
 
         config.putData("/news/routes/add", routes);
         config.putData("/news/storage/set", dbSettings);

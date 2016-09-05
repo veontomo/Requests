@@ -1,4 +1,4 @@
-package com.veontomo;
+package com.veontomo.requests;
 
 import java.util.ArrayList;
 import java.util.List;

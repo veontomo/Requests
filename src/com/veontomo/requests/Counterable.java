@@ -1,4 +1,4 @@
-package com.veontomo;
+package com.veontomo.requests;
 
 import java.util.concurrent.Callable;
 

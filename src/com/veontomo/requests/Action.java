@@ -1,4 +1,4 @@
-package com.veontomo;
+package com.veontomo.requests;
 
 /**
  * An action to be executed.

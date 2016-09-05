@@ -1,10 +1,11 @@
-package com.veontomo
+package com.veontomo.requests
 
 import org.json.simple.JSONObject
 import java.io.IOException
 import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
+//import com.github.salomonbrys.kotson.*
 
 /**
  * Manage the server.
@@ -18,18 +19,18 @@ class ServerConfigurator(val host: String) {
      * @param url resource name, relative to {@link #host}
      * @param data a map containing data to be passed to the server
      */
-    fun putData(uri: String, data: Map<String, String>) {
+    fun putData(uri: String, data: JSONObject) {
         val url: URL = URL(host + uri)
         try {
             val connection: HttpURLConnection = url.openConnection() as HttpURLConnection;
             connection.doOutput = true
-            connection.requestMethod = "PUT";
+            connection.requestMethod = "PUT"
             connection.setRequestProperty("Accept-Charset", "ASCII")
             connection.addRequestProperty("User-Agent", "Mozilla/4.06 [en] (WinNT; I)")
             connection.setRequestProperty("Content-Type", "application/json")
             val out: OutputStream = connection.outputStream
             out.write(mapToByteArray(data))
-            out.close();
+            out.close()
             connection.inputStream
             val responseCode = connection.responseCode
             println("response code: $responseCode")
@@ -45,9 +46,7 @@ class ServerConfigurator(val host: String) {
      * @param data
      * @return a byte array with UTF-8 encoding
      */
-    private fun mapToByteArray(data: Map<String, String>): ByteArray {
-        val routes = JSONObject();
-        data.forEach { pair -> routes.put(pair.key, pair.value) }
-        return routes.toString().toByteArray(Charsets.UTF_8)
+    private fun mapToByteArray(data: JSONObject): ByteArray {
+        return data.toString().toByteArray(Charsets.UTF_8)
     }
 }
