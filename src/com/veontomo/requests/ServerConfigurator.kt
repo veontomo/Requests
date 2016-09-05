@@ -5,7 +5,6 @@ import java.io.IOException
 import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
-//import com.github.salomonbrys.kotson.*
 
 /**
  * Manage the server.
@@ -48,5 +47,6 @@ class ServerConfigurator(val host: String) {
      */
     private fun mapToByteArray(data: JSONObject): ByteArray {
         return data.toString().toByteArray(Charsets.UTF_8)
+
     }
 }

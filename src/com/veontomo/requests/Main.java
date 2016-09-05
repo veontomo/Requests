@@ -6,7 +6,6 @@ import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 class Main {
 
@@ -27,7 +26,9 @@ class Main {
 
         JSONObject routes = new JSONObject();
         routes.put("venditori/venditori", "http://www.venditori.it");
-        routes.put("venditori/offerta", "http://www.venditori.it/fiera_degli_agenti_di_commercio.php");
+        routes.put("venditori/offerta1", "http://www.venditori.it/fiera_degli_agenti_di_commercio.php");
+        routes.put("google/fake", "http://www.rappresentanti.it");
+        routes.put("google/agenti", "http://agentimail.it/");
 
         JSONObject dbSettings = new JSONObject();
         dbSettings.put("User_Name", "advlite_dev");
@@ -37,17 +38,17 @@ class Main {
         dbSettings.put("Server", serverIP);
 
         JSONObject storageSettings = new JSONObject();
-        storageSettings.put("connection", storageSettings);
-        storageSettings.put("max cache size", 15);
+        storageSettings.put("connection", dbSettings);
+        storageSettings.put("max cache size", 22);
 
         config.putData("/news/routes/add", routes);
-        config.putData("/news/storage/set", dbSettings);
+        config.putData("/news/storage/set", storageSettings);
 
-        final String[] clickPool = routes.keySet().toArray(new String[]{});
+        final String[] clickPool = (String[]) routes.keySet().toArray(new String[]{});
         final int size = clickPool.length;
-        final int ACTIONS_PER_WORKER = 10;
-        final int WORKER_NUM = 20;
-        final int SLOT_NUM = 20;
+        final int ACTIONS_PER_WORKER = 2;
+        final int WORKER_NUM = 200;
+        final int SLOT_NUM = 100;
         int actionsHttp = 0;
         ArrayList<Action> actions;
         Counter c = new Counter(SLOT_NUM);
