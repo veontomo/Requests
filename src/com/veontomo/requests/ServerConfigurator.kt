@@ -15,7 +15,7 @@ import java.net.URL
 class ServerConfigurator(val host: String) {
     /**
      * Perform a PUT request with given data in the body of the request.
-     * @param url resource name, relative to {@link #host}
+     * @param uri resource name, relative to {@link #host}
      * @param data a map containing data to be passed to the server
      */
     fun putData(uri: String, data: JSONObject) {

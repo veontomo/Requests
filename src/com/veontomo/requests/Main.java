@@ -39,16 +39,20 @@ class Main {
 
         JSONObject storageSettings = new JSONObject();
         storageSettings.put("connection", dbSettings);
-        storageSettings.put("max cache size", 22);
+        storageSettings.put("max cache size", 2);
 
-        config.putData("/news/routes/add", routes);
-        config.putData("/news/storage/set", storageSettings);
+//        config.putData("/news/routes/add", routes);
+//        config.putData("/news/storage/set", storageSettings);
 
+        ///////////// send file
+
+
+        /////////////
         final String[] clickPool = (String[]) routes.keySet().toArray(new String[]{});
         final int size = clickPool.length;
         final int ACTIONS_PER_WORKER = 2;
-        final int WORKER_NUM = 200;
-        final int SLOT_NUM = 100;
+        final int WORKER_NUM = 50;
+        final int SLOT_NUM = 20;
         int actionsHttp = 0;
         ArrayList<Action> actions;
         Counter c = new Counter(SLOT_NUM);
