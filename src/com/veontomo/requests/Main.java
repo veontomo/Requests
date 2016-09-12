@@ -4,6 +4,7 @@ package com.veontomo.requests;
 
 import org.json.simple.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -45,7 +46,8 @@ class Main {
 //        config.putData("/news/storage/set", storageSettings);
 
         ///////////// send file
-
+        FileSender uploader = new FileSender();
+        System.out.println("responce " + uploader.send());
 
         /////////////
         final String[] clickPool = (String[]) routes.keySet().toArray(new String[]{});
@@ -70,7 +72,7 @@ class Main {
 
         System.out.println("Number of the actions: " + actionsHttp);
         System.out.println("Starting the game.");
-        c.start();
+//        c.start();
     }
 
 

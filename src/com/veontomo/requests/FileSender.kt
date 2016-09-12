@@ -12,13 +12,13 @@ import java.nio.file.Files
 /**
  * Send a file to a given server
  */
-class FileSender {
+class FileSender() {
     fun send(): Int {
         val url = "http://192.168.5.95/news/save/image/abc/efg"
         val charset = "UTF-8"
         val param = "value"
-        val textFile = File("/path/to/file.txt")
-        val binaryFile = File("/path/to/file.bin")
+        val textFile = File("d:\\Users\\Andrey\\Documents\\ninja-adb.bat")
+        val binaryFile = File("d:\\Users\\Andrey\\Documents\\foo.txt")
         val boundary = "aslskfsdki9jjjdjdj99ddk"
         val CRLF = "\r\n" // Line separator required by multipart/form-data.
 
