@@ -47,6 +47,7 @@ class Main {
 
         ///////////// send file
         FileSender uploader = new FileSender();
+        uploader.enqueue(".\\data\\foo.txt");
         System.out.println("responce " + uploader.send());
 
         /////////////
