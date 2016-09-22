@@ -4,7 +4,6 @@ package com.veontomo.requests;
 
 import org.json.simple.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -45,10 +44,10 @@ class Main {
 //        config.putData("/news/routes/add", routes);
 //        config.putData("/news/storage/set", storageSettings);
 
-        ///////////// send file
+        ///////////// send image
         FileSender uploader = new FileSender();
-        uploader.enqueue(".\\data\\foo.txt");
-        System.out.println("responce " + uploader.send());
+        System.out.println("response1: " + uploader.uploadIImage(host + entryPoint + "/save/image/test", ".\\data\\img.jpg"));
+        System.out.println("response2: " + uploader.uploadIImage(host + entryPoint + "/save/image", ".\\data\\yarn.png"));
 
         /////////////
         final String[] clickPool = (String[]) routes.keySet().toArray(new String[]{});
