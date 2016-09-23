@@ -41,17 +41,18 @@ class Main {
         storageSettings.put("connection", dbSettings);
         storageSettings.put("max cache size", 2);
 
-//        config.putData("/news/routes/add", routes);
-//        config.putData("/news/storage/set", storageSettings);
+        config.putData("/news/routes/add", routes);
+        config.putData("/news/storage/set", storageSettings);
 
         ///////////// send image
         FileSender uploader = new FileSender();
-        System.out.println("response1: " + uploader.uploadIImage(host + entryPoint + "/save/image/test", ".\\data\\img.jpg"));
-        System.out.println("response2: " + uploader.uploadIImage(host + entryPoint + "/save/image", ".\\data\\yarn.png"));
+        System.out.println("response1: " + uploader.uploadIImage(host + entryPoint + "/save/image/conference-2016", ".\\data\\yarn.png"));
+        System.out.println("response2: " + uploader.uploadIImage(host + entryPoint + "/save/image/summer-holiday-2016", ".\\data\\Mario.png"));
+        System.out.println("response2: " + uploader.uploadIImage(host + entryPoint + "/save/image", ".\\data\\img.jpg"));
 
         /////////////
         final String[] clickPool = (String[]) routes.keySet().toArray(new String[]{});
-        final int size = clickPool.length;
+        final String[] viewPool = new String[]{"/images/img.jpg", "/images/conference-2016/automatic/yarn.png", "/images/summer-holiday-2016/a-code/Mario.png"};
         final int ACTIONS_PER_WORKER = 2;
         final int WORKER_NUM = 50;
         final int SLOT_NUM = 20;
@@ -61,8 +62,9 @@ class Main {
         for (int i = 0; i < WORKER_NUM; i++) {
             actions = new ArrayList<>();
             for (int j = 0; j < ACTIONS_PER_WORKER; j++) {
-                actions.add(new UrlRequest(host + entryPoint + "/", clickPool[actionsHttp % size]));
-                actionsHttp++;
+                actions.add(new UrlRequest(host + entryPoint + "/", clickPool[actionsHttp % clickPool.length]));
+                actions.add(new UrlRequest(host + entryPoint, viewPool[actionsHttp % viewPool.length]));
+                actionsHttp += 2;
 
             }
             Worker v = new Worker(actions);
@@ -72,7 +74,7 @@ class Main {
 
         System.out.println("Number of the actions: " + actionsHttp);
         System.out.println("Starting the game.");
-//        c.start();
+        c.start();
     }
 
 

@@ -19,6 +19,12 @@ class Counter {
      */
     private final List<Counterable> queue;
 
+    private int actions = 0;
+
+    public int getActions(){
+        return actions;
+    }
+
 
     public Counter(int capacity) {
         this.capacity = capacity;
